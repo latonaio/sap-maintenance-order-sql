@@ -1,4 +1,4 @@
-CREATE TABLE `sap-maintenance-order-operation-component-data`
+CREATE TABLE `sap_maintenance_order_operation_component_data`
 (
   `MaintenanceOrder`                  varchar(12) NOT NULL,
   `MaintenanceOrderOperation`         varchar(4) NOT NULL,
@@ -15,8 +15,8 @@ CREATE TABLE `sap-maintenance-order-operation-component-data`
   `BaseUnit`                          varchar(3) DEFAULT NULL,
   `QuantityInUnitOfEntry`             varchar(15) DEFAULT NULL,
   `UnitOfEntry`                       varchar(3) DEFAULT NULL,
-  `RequirementDate`                   date DEFAULT NULL,
-  `RequirementTime`                   time DEFAULT NULL,
+  `RequirementDate`                   varchar(80) DEFAULT NULL,
+  `RequirementTime`                   varchar(80) DEFAULT NULL,
   `Supplier`                          varchar(10) DEFAULT NULL,
   `Plant`                             varchar(4) DEFAULT NULL,
   `StorageLocation`                   varchar(4) DEFAULT NULL,
@@ -26,12 +26,12 @@ CREATE TABLE `sap-maintenance-order-operation-component-data`
   `MaterialGroup`                     varchar(9) DEFAULT NULL,
   `ProductTypeCode`                   varchar(2) DEFAULT NULL,
   `ServicePerformer`                  varchar(10) DEFAULT NULL,
-  `PerformancePeriodStartDateTime`    datetime DEFAULT NULL,
-  `PerformancePeriodStartDate`        date DEFAULT NULL,
-  `PerformancePeriodEndDate`          date DEFAULT NULL,
-  `PerformancePeriodEndDateTime`      datetime DEFAULT NULL,
-  `PerformancePeriodStartTime`        time DEFAULT NULL,
-  `PerformancePeriodEndTime`          time DEFAULT NULL,
+  `PerformancePeriodStartDateTime`    varchar(80) DEFAULT NULL,
+  `PerformancePeriodStartDate`        varchar(80) DEFAULT NULL,
+  `PerformancePeriodEndDate`          varchar(80) DEFAULT NULL,
+  `PerformancePeriodEndDateTime`      varchar(80) DEFAULT NULL,
+  `PerformancePeriodStartTime`        varchar(80) DEFAULT NULL,
+  `PerformancePeriodEndTime`          varchar(80) DEFAULT NULL,
   `LeanServiceDuration`               varchar(5) DEFAULT NULL,
   `LeanServiceDurationUnit`           varchar(3) DEFAULT NULL,
   `DistributionFunction`              varchar(10) DEFAULT NULL,
@@ -79,6 +79,6 @@ CREATE TABLE `sap-maintenance-order-operation-component-data`
   `OverallLimitAmount`                varchar(13) DEFAULT NULL,
   `ExpectedOverallLimitAmount`        varchar(13) DEFAULT NULL,
     PRIMARY KEY (`MaintenanceOrder`, `MaintenanceOrderOperation`, `MaintenanceOrderSubOperation`, `MaintenanceOrderComponent`),
-    CONSTRAINT `MaintenanceOrder_fk` FOREIGN KEY (`MaintenanceOrder`) REFERENCES `sap-maintenance-order-header-data` (`MaintenanceOrder`)
+    CONSTRAINT `SAPMaintenanceOrderOperationComponentData_fk` FOREIGN KEY (`MaintenanceOrder`) REFERENCES `sap_maintenance_order_header_data` (`MaintenanceOrder`)
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8mb4;

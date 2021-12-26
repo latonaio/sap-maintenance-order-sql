@@ -1,4 +1,4 @@
-CREATE TABLE `sap-maintenance-order-object-list-item-data`
+CREATE TABLE `sap_maintenance_order_object_list_item_data`
 (
   `MaintenanceOrder`               varchar(12) NOT NULL,
   `MaintenanceOrderObjectList`     int(64) NOT NULL,
@@ -12,6 +12,6 @@ CREATE TABLE `sap-maintenance-order-object-list-item-data`
   `FunctionalLocation`             varchar(30) DEFAULT NULL,
   `MaintObjectListItemSequence`    varchar(20) DEFAULT NULL,
     PRIMARY KEY (`MaintenanceOrder`, `MaintenanceOrderObjectList`, `MaintenanceObjectListItem`),
-    CONSTRAINT `MaintenanceOrder_fk` FOREIGN KEY (`MaintenanceOrder`) REFERENCES `sap-maintenance-order-header-data` (`MaintenanceOrder`)
+    CONSTRAINT `SAPMaintenanceOrderObjectListItemData_fk` FOREIGN KEY (`MaintenanceOrder`) REFERENCES `sap_maintenance_order_header_data` (`MaintenanceOrder`)
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8mb4;
