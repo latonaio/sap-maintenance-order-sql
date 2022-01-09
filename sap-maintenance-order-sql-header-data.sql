@@ -64,7 +64,7 @@ CREATE TABLE `sap_maintenance_order_header_data`
   `LatestAcceptableCompletionDate`     varchar(80) DEFAULT NULL,
   `MaintOrdPersonResponsible`          varchar(12) DEFAULT NULL,
   `LastChangeDateTime`                 varchar(80) DEFAULT NULL,
-  `ControllingSettlementProfile`       varchar(4) DEFAULT NULL,
+  `ControllingSettlementProfile`       varchar(6) DEFAULT NULL,
   `SystemStatusText`                   varchar(40) DEFAULT NULL,
   `UserStatusText`                     varchar(40) DEFAULT NULL,
   `TechnicalObject`                    varchar(40) DEFAULT NULL,
